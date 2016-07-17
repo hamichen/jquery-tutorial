@@ -3,19 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <title>JQuery 教材</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="css/BS3CSS.min.css?kkbruce=20151290847" rel="stylesheet"/>
+
     <script src="js/jquery.min.js" type="text/javascript"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <script src="js/main.js" type="text/javascript"></script>
+
 </head>
 <body>
-<div>
-    <ul>
-        <li><a href="http://www.w3school.com.cn/jquery/" target="w3school-learn" >W3School JQuery 簡中版</a></li>
-        <li><a href="http://learn.jquery.com/" target="learn-jquery">官方學習網站</a></li>
+<div tabindex="-1" id="content" class="bs-docs-header">
+    <div class="container"><h1>105年度彰化縣JQuery研習</h1>
 
-    </ul>
+    </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+            <div class="bs-docs-section">
+                <h1 id="contents" class="page-header">課程內容</h1>
+                <ul class="">
+                    <li>jQuery 選取元素 (Selectors)</li>
+                    <li>jQuery 屬性與樣式 (Attributes & CSS)</li>
+                    <li>jQuery 篩選元素 (Traversing)</li>
+                    <li>jQuery 事件處理 (Events)</li>
+                    <li>jQuery 效果 (Effects)</li>
+                    <li>jQuery DOM 操作 (Manipulation)</li>
+                    <li>jQuery Ajax</li>
+                    <li>jQuery UI</li>
+                    <li>JSON 資料結構</li>
+                </ul>
+            </div>
+
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="Tools">編輯工具</h1>
+                <p>整合式的Web 編輯工具: <a href="https://www.jetbrains.com/webstorm/">https://www.jetbrains.com/webstorm/</a>
+                </p>
+                <p>Git for windows: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="links">線上教材</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><a class="btn btn-lg btn-outline" href="http://www.w3school.com.cn/jquery/"
+                              target="w3school-learn">W3School JQuery 簡中版</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><a class="btn btn-lg btn-outline" href="http://learn.jquery.com/" target="learn-jquery">JQuery
+                            官方學習網站</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="teachers">學員作業</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="pull-right"><a class="btn btn-outline" href="homework/tea-00/">講師示範</a></p>
+                        <table id="teacher-table" class="table"></table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3" role="complementary">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+                <ul class="nav bs-docs-sidenav">
+                    <li><a href="#contents">課程內容</a></li>
+                    <li><a href="#Tools">編輯工具</a></li>
+                    <li><a href="#links">線上教材</a></li>
+                    <li><a href="#teachers">學員作業</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
 <div>
 
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "data/teachers.csv",
+            dataType: "text",
+            success: function (data) {
+                var tData = CSVToArray(data);
+                $('#teacher-table').empty();
+
+                $.each(tData,function(i,v){
+                    if (v[0] == '') return;
+                    var tr = $("<tr></tr>");
+                    tr.append("<td>"+$.trim(v[0])+"</td>");
+                    tr.append("<td>"+$.trim(v[3])+"</td>");
+                    tr.append("<td>"+$.trim(v[1])+"</td>");
+                    if (i == 0)
+                        tr.append("<td>作業連結</td>");
+                    else
+                        tr.append("<td><a class='btn btn-outline' href='homework/tea-"+$.trim(v[0])+"/'>連結</a></td>");
+
+                    $('#teacher-table').append(tr);
+                });
+
+            }
+        });
+    });
+
+
+</script>
 
 </body>
 </html>
