@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script type="text/javascript">
+ $(document).ready(
+	function (){
+		$("#b0").click(
+				function(){
+					$("p").removeClass("red");
+				}
+		);
+		$("#b1").click(
+				function(){
+					$("p").addClass("red");
+				}
+		);
+		$("#b5").click(
+				function (){
+					$("div#div5").hide();
+				}
+		);
+	}
+ );
+</script>
+<style>
+	.red {background: red}
+	table.dataintable {
+		border: 1px solid #aaa;
+		border-collapse: collapse;
+		margin-top: 10px;
+		width: 100%;
+	}
+	table.dataintable th {
+		background-color: #d5d5d5;
+		border: 1px solid #aaa;
+		padding: 5px 15px 5px 6px;
+		text-align: left;
+		vertical-align: baseline;
+	}
+	table.dataintable td {
+		background-color: #efefef;
+		border: 1px solid #aaa;
+		padding: 6px 15px 6px 6px;
+		vertical-align: text-top;
+	}
+	table.dataintable pre {
+		background-color: transparent;
+		border: 0 none;
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+	table.dataintable p {
+		margin: 0 0 2px;
+	}
+</style>
+</head>
+<body>
+<div class="container bs-docs-container">
+	<div class="bs-callout bs-callout-info">
+<button id="b0">CLEAN</button>
+<table class="table table-striped">
+	<tbody><tr>
+		<th>?法</th>
+		<th>描述</th>
+		<th>BUTTON</th>
+	</tr>
+
+	<tr>
+		<td>$(this)</td>
+		<td>?前 HTML 元素</td>
+		<td</td>
+
+	</tr>
+
+	<tr>
+		<td>$("p")</td>
+		<td>所有 &lt;p&gt; 元素</td>
+		<td><button id="b1">b1</button></td>
+	</tr>
+
+	<tr>
+		<td>$("p.intro")</td>
+		<td>所有 class="intro" 的 &lt;p&gt; 元素</td>
+	</tr>
+
+	<tr>
+		<td>$(".intro")</td>
+		<td>所有 class="intro" 的元素</td>
+	</tr>
+
+	<tr>
+		<td>$("#intro")</td>
+		<td>id="intro" 的元素</td>
+	</tr>
+
+	<tr>
+		<td>$("ul li:first")</td>
+		<td>每? &lt;ul&gt; 的第一? &lt;li&gt; 元素</td>
+	</tr>
+
+	<tr>
+		<td>$("[href$='.jpg']")</td>
+		<td>所有?有以 ".jpg" ?尾的?性值的 href ?性</td>
+	</tr>
+
+	<tr>
+		<td>$("div#intro .head")</td>
+		<td>id="intro" 的 &lt;div&gt; 元素中的所有 class="head" 的元素</td>
+		<td><button id="b5">b5</button></td>
+	</tr>
+	</tbody></table>
+
+<div>
+	<p>
+		P1
+	</p>
+</div>
+<div id="div5">
+	<p class="img">
+	<img src="http://www.hsjh.chc.edu.tw/pub/images/school/dlib_icon.png">
+	</p>
+</div>
+<p><a href="index.html">BACK</a></p>
+	</div></div>
+</body>
+
+</html> 
