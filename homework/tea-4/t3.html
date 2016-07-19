@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>simu TABLE之td選擇</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $("#removeClass").click(function(){
+                $(".yellow").removeClass('yellow');
+            });
+
+            $("#b1").click(function(){
+                $("p").addClass('yellow');
+            });
+
+            $("#b2").click(function(){
+                $("p.intro").addClass('yellow');
+            });
+            $("#num").click(function(){
+                var num=0;
+                num=getRandomArbitrary(0,15);
+                alert(num);
+            })
+            function getRandomArbitrary(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            $("td:eq("+num+")").css('background','yellow');
+
+        });
+    </script>
+
+    <style>
+
+        .yellow {background: yellow}
+        .dataintable {border: 1px solid}
+    </style>
+</head>
+<body>
+<button id="num">隨機數字</button>
+<table class="table">
+    <tr>
+      <td>1</td><td>2</td><td>3</td><td>4</td>
+    </tr>
+    <tr>
+        <td>5</td><td>6</td><td>7</td><td>8</td>
+    </tr>
+    <tr>
+        <td>9</td><td>10</td><td>11</td><td>12</td>
+    </tr>
+    <tr>
+        <td>13</td><td>14</td><td>15</td><td>16</td>
+    </tr>
+</table>
+<button id="removeClass">清除</button>
+
+</body>
+</html>
