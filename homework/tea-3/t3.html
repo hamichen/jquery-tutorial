@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>林代典的作業_t2</title>
+    <title>林代典的作業_t3</title>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -19,19 +19,19 @@
     <script type="text/javascript">
         $(document).ready(
                 function () {
-                    function () {
-
-                    };
-                    var tdnum = $("td").length;
-                    var num = Math.floor(Math.random() * (tdnum + 1));
-                    alert(num);
                     $("#random").click(
-                            function (num) {
+                            function () {
+                                var tdnum = $("td").length-1;
+                                var num =getRandomInt(0,tdnum);
+                                $(".yellow").removeClass("yellow");
                                 $("td:eq("+num+")").addClass("yellow");
                             }
+
                     );
-                }
-        );
+                    function getRandomInt(min, max) {
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    }
+        });
     </script>
     <style>
         .yellow {
