@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作業123</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var max = 9;
+            var min = 1;
+            var urnum;
+            urnum=Math.floor(Math.random() * (max - min + 1)) + min);
+            urnum=urnum-1;
+
+            var alltd;
+            alltd = $('td').length;
+            //alert(alltd);
+
+            $("#selectMe").click(function () {
+
+                $('td:eq(1)').addClass('yellow');
+
+            });
+
+            $("#b1").click(function () {
+                $("p").addClass('yellow');
+            });
+
+
+        });
+    </script>
+
+    <style>
+
+        .yellow {
+            background: yellow
+        }
+
+        .dataintable {
+            border: 1px solid
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container bs-docs-container">
+    <span id="selectMe" class="btn btn-warning pull-right"> 選號</span>
+
+    <table class="table" border="1">
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
