@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>simu 選擇器練習</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#removeClass").click(function(){
+                $(".yellow").removeClass('yellow');
+            });
+
+            $("#b1").click(function(){
+                $("p").addClass('yellow');
+            });
+
+            $("#b2").click(function(){
+                $("p.intro").addClass('yellow');
+            });
+        });
+    </script>
+
+    <style>
+
+        .yellow {background: yellow}
+        .dataintable {border: 1px solid}
+    </style>
+</head>
+<body>
+<button id="removeClass">清除</button>
+<table class="dataintable" border="1">
+    <tbody><tr>
+        <th>语法</th>
+        <th>描述</th>
+        <th>按鈕</th>
+    </tr>
+
+    <tr>
+        <td>$("p")</td>
+        <td>所有 &lt;p&gt; 元素</td>
+        <td><button id="b1">按我</button></td>
+    </tr>
+
+    <tr>
+        <td>$("p.intro")</td>
+        <td>所有 class="intro" 的 &lt;p&gt; 元素</td>
+        <td><button id="b2">按我</button></td>
+    </tr>
+
+    <tr>
+        <td>$(".intro")</td>
+        <td>所有 class="intro" 的元素</td>
+    </tr>
+
+    <tr>
+        <td>$("#intro")</td>
+        <td>id="intro" 的元素</td>
+    </tr>
+
+    <tr>
+        <td>$("ul li:first")</td>
+        <td>每个 &lt;ul&gt; 的第一个 &lt;li&gt; 元素</td>
+    </tr>
+
+    <tr>
+        <td>$("[href$='.jpg']")</td>
+        <td>所有带有以 ".jpg" 结尾的属性值的 href 属性</td>
+    </tr>
+
+    <tr>
+        <td>$("div#intro .head")</td>
+        <td>id="intro" 的 &lt;div&gt; 元素中的所有 class="head" 的元素</td>
+    </tr>
+    </tbody></table>
+
+<div>
+    <p>$("p")</p>
+</div>
+<div>
+    <p class="intro">$("p.intro")</p>
+</div>
+
+
+</body>
+</html>
