@@ -2,17 +2,39 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<title>林代典的作業_t1</title>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(
-	function(){
-	$("h1").css("color","blue");
-	}
+        function(){
+            $("h1").click(
+                    function () {
+                        $(this).hide();
+                    }
+            );
+            $("#c1").click(
+                    function () {
+                        $("h1").show();
+                    }
+            );
+            $("#c2").click(
+                    function () {
+                        $(".a1").css("border","dashed");
+                        $(".a1").css("color","blue");
+                    }
+            );
+
+        }
 );
 </script>
-<title>林代典的作業</title>
+<style>
+    .a1 {color: red; border: double};
+</style>
 </head>
 <body>
-<h1>第一次接觸</h1>
+<h1 class="a1">我是第一行</h1>
+<h1 class="a1">我是第二行</h1>
+<p><a id="c1" href="#">點我_顯示</a></p>
+<p><a id="c2" href="#">點我_變化</a></p>
 </body>
 </html>
