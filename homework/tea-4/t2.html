@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>陳瑩光的作業</title>
+    <title>simu 選擇器練習</title>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -38,11 +37,10 @@
     </style>
 </head>
 <body>
-<div class="container bs-docs-container">
-
+<div class="table-responsive">
     <h1 class="page-header">選擇器練習</h1>
-    <span id="removeClass" class="btn btn-warning pull-right"><i class="glyphicon glyphicon-remove"></i> 清除</span>
-    <table class="table table-bordered table-striped">
+    <button id="removeClass">清除</button>
+    <table class="table">
         <tbody><tr>
             <th>语法</th>
             <th>描述</th>
@@ -52,7 +50,7 @@
         <tr>
             <td>$("p")</td>
             <td>所有 &lt;p&gt; 元素</td>
-            <td><button id="b1" class="btn btn-primary">按我</button></td>
+            <td><button id="b1">按我</button></td>
         </tr>
 
         <tr>
@@ -94,8 +92,8 @@
         <p class="intro">$("p.intro")</p>
     </div>
 
-
 </div>
+
 
 </body>
 </html>
