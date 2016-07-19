@@ -1,19 +1,42 @@
 <html>
 <head>
     <meta charset="UTF-8">
-	<title>第一次接觸</title>
+    <title>第一次接觸</title>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-	<script type="text/javascript">
-	  $(document).ready(myInit);
-	    function myInit(){
-			alert('123');
-	      $("h1").css('color','blue');
-		};
-	  
-	</script>
+    <script type="text/javascript">
+        $(document).ready(myInit);
+        function myInit() {
+            //alert('123');
+            $("h1").click(function () {
+                $(this).hide();
+            });
+			$("#c1").click(function(){
+                $("h1").show();
+            });
+            $("#c2").click(function(){
+                $(".a1").css('border' , 'dashed');
+            });
+
+        }
+        ;
+
+    </script>
+    <style>
+        .a1 {
+            color: mediumvioletred;
+            border: double #006699
+        }
+    </style>
 </head>
 <body>
-<h1 style="color:red">第一次接觸</h1>
+<h1 class="a1">第一次接觸</h1>
+
+<h1 class="a1" style="color:red">第二次接觸</h1>
+
+<p><a id="c1" href="#">顯示</a></p>
+
+<p><a id="c2" href="#">改變 CSS</a></p>
+
 
 </body>
 </html>
