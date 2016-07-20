@@ -26,7 +26,15 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            $("#slider").slider();
+            $("#slider").slider({
+                value: 20,
+                change: function ( event, ui) {
+                    //console.log(ui);
+                    var val = ui.value;
+                    console.log(val);
+                }
+            });
+
             $("#sortable").sortable();
          //   console.log($("#ui-kind"));
 
@@ -41,6 +49,8 @@
 
                 $("#ui-kind").attr('href',"https://code.jquery.com/ui/1.12.0/themes/"+val+"/jquery-ui.css");
             });
+
+
 
         });
     </script>
