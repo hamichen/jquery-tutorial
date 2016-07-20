@@ -44,6 +44,22 @@
             }
             setTimeout( progress, 2000 );
         } );
+     $(function(){
+         $.ajax({
+             type: "get",
+             async: false,
+             url: "http://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=17",
+             dataType: "jsonp",//指定以jsonp方式執行
+             jsonp: "mycallback",//"mycallback"會以GET的變數名稱傳送，沒指定時，jQuery使用"callback"當變數名稱
+             jsonpCallback:'aaaa',//"mycallback"變數的值，沒指定時，jQuery隨機產生
+             success: function(res){
+                 console.log(res);
+             },
+             error: function(){
+                 alert('fail');
+             }
+         });
+     });
 
  });
 
