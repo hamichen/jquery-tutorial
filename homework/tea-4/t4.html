@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>陳瑩光的作業</title>
+    <title>simu TABLE之td選擇</title>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -14,34 +13,27 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-
         $(document).ready(function () {
 
+
             $("input[name='c1']").change(function(){
+                console.log('test');
+
                 $(this).addClass('yellow');
             }).focus(function(){
                 $(this).removeClass('yellow');
             });
 
-            $("input[name='c2']").mouseover(function(){
-                $(this).addClass('mouse');
-                $("input[name='c1']").trigger('change');
-            }).mouseout(function(){
-                $(this).removeClass('mouse');
-            });
-            $("input[name='c3']").keyup(function(){
-                console.log($(this).val());
-            });
         });
+
+
+
     </script>
 
     <style>
 
         .yellow {background: yellow}
         .dataintable {border: 1px solid}
-        .mouse{
-           cursor:col-resize;
-        }
     </style>
 </head>
 <body>
@@ -49,11 +41,9 @@
 
     <h1 class="page-header">Event 練習</h1>
     <h2>change event </h2>
+
     <input type="text" name="c1">
-    <h2>mouseover() event </h2>
-    <input type="text" name="c2">
-    <h2>key press event </h2>
-    <input type="text" name="c3">
+
 
 </div>
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作業123</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("input[name='c1']").change(function () {
+               $(this).addClass('yellow');
+             }).focus(function () {
+                $(this).removeClass('yellow');
+                 }).mouseover(function(){
+                $(this).addClass('myMOUSE');
+                          });
+
+            });
+
+
+    </script>
+
+    <style>
+
+        .yellow {
+            background: yellow
+        }
+
+        .dataintable {
+            border: 1px solid
+        }
+        .myMOUSE{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+事件練習 <br>
+<input type="text" name="c1">
+
+
+</body>
+</html>
