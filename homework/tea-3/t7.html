@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>林代典的作業_t7</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/sunny/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <script   src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"   integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="   crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#slider").slider();
+            $( "#sortable" ).sortable();
+            $( "#sortable" ).disableSelection();
+            $( "#menu" ).menu();
+        });
+    </script>
+    <style>
+        .yellow {background: yellow}
+        .mouse {cursor: url("http://image.flaticon.com/icons/png/128/149/149050.png"), auto}
+    </style>
+</head>
+<body>
+<div class="col-md-9">
+    <h1 class="page-header">jquery ui 練習</h1>
+    <div>
+        <select id="">
+
+        </select>
+    </div>
+    <div id="slider"></div>
+    <div>
+        <ul id="sortable">
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+        </ul>
+    </div>
+    <div>
+        <ul id="menu">
+            <li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+            <li><div>Books</div></li>
+            <li><div>Clothing</div></li>
+            <li><div>Electronics</div>
+                <ul>
+                    <li><div>Home Entertainment</div></li>
+                    <li><div>Car Hifi</div></li>
+                    <li><div>Utilities</div></li>
+                </ul>
+            </li>
+            <li><div>Movies</div></li>
+            <li><div>Music</div>
+                <ul>
+                    <li><div>Rock</div>
+                        <ul>
+                            <li><div>Alternative</div></li>
+                            <li><div>Classic</div></li>
+                        </ul>
+                    </li>
+                    <li><div>Jazz</div>
+                        <ul>
+                            <li><div>Freejazz</div></li>
+                            <li><div>Big Band</div></li>
+                            <li><div>Modern</div></li>
+                        </ul>
+                    </li>
+                    <li><div>Pop</div></li>
+                </ul>
+            </li>
+            <li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+        </ul>
+    </div>
+    <span class="btn btn-default"><a href="index.html">back index</a></span>
+</div>
+</body>
+</html>
