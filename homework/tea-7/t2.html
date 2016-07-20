@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>陳瑩光的作業</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#removeClass").click(function(){
+                $(".yellow").removeClass('yellow');
+            });
+
+            $("#b1").click(function(){
+                $("p").addClass('yellow');
+            });
+
+            $("#b2").click(function(){
+                $("p.intro").addClass('yellow');
+            });
+        });
+    </script>
+
+    <style>
+
+        .yellow {background: yellow}
+        .dataintable {border: 1px solid}
+    </style>
+</head>
+<body>
+<div class="container bs-docs-container">
+
+    <h1 class="page-header">選擇器練習</h1>
+    <span id="removeClass" class="btn btn-warning pull-right"><i class="glyphicon glyphicon-remove"></i> 清除</span>
+    <table class="table table-bordered table-striped">
+        <tbody><tr>
+            <th>语法</th>
+            <th>描述</th>
+            <th>按鈕</th>
+        </tr>
+
+        <tr>
+            <td>$("p")</td>
+            <td>所有 &lt;p&gt; 元素</td>
+            <td><button id="b1" class="btn btn-primary">按我</button></td>
+        </tr>
+
+        <tr>
+            <td>$("p.intro")</td>
+            <td>所有 class="intro" 的 &lt;p&gt; 元素</td>
+            <td><button id="b2">按我</button></td>
+        </tr>
+
+        <tr>
+            <td>$(".intro")</td>
+            <td>所有 class="intro" 的元素</td>
+        </tr>
+
+        <tr>
+            <td>$("#intro")</td>
+            <td>id="intro" 的元素</td>
+        </tr>
+
+        <tr>
+            <td>$("ul li:first")</td>
+            <td>每个 &lt;ul&gt; 的第一个 &lt;li&gt; 元素</td>
+        </tr>
+
+        <tr>
+            <td>$("[href$='.jpg']")</td>
+            <td>所有带有以 ".jpg" 结尾的属性值的 href 属性</td>
+        </tr>
+
+        <tr>
+            <td>$("div#intro .head")</td>
+            <td>id="intro" 的 &lt;div&gt; 元素中的所有 class="head" 的元素</td>
+        </tr>
+        </tbody></table>
+
+    <div>
+        <p>$("p")</p>
+    </div>
+    <div>
+        <p class="intro">$("p.intro")</p>
+    </div>
+
+
+</div>
+
+</body>
+</html>
