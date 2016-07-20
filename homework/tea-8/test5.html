@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>陳育銓的作業5</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("input[name='c1']").change(function () {
+                $(this).addClass('yellow');
+            }).focus(function () {
+                $(this).removeClass('yellow');
+            });
+
+            $("input[name='c2']").mouseover(function () {
+                $(this).addClass('mouse');
+                $("input[name='c1']").trigger('change');
+            }).mouseout(function () {
+                $(this).removeClass('mouse');
+            });
+            $("input[name='c3']").keyup(function () {
+                console.log($(this).val());
+            });
+        });
+    </script>
+
+    <style>
+
+        .yellow {
+            background: yellow
+        }
+
+        .dataintable {
+            border: 1px solid
+        }
+
+        .mouse {
+            cursor: col-resize;
+        }
+    </style>
+</head>
+<body>
+<div class="container bs-docs-container">
+
+    <h1 class="page-header">Event 練習</h1>
+    <h2>change event </h2>
+    <input type="text" name="c1">
+    <h2>mouseover() event </h2>
+    <input type="text" name="c2">
+    <h2>key press event </h2>
+    <input type="text" name="c3">
+
+</div>
+
+</body>
+</html>
