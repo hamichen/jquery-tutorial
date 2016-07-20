@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/swanky-purse/jquery-ui.css">
+    <link rel="stylesheet" id="ui-kind" href="https://code.jquery.com/ui/1.12.0/themes/swanky-purse/jquery-ui.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -28,28 +28,35 @@
         $(document).ready(function () {
             $("#slider").slider();
             $("#sortable").sortable();
+         //   console.log($("#ui-kind"));
+
+            var themes = ['base','black-tie' ,'blitzer', 'cupertino','dark-hive' ,'ui-darkness' ,'ui-lightness' ,'vader'];
+
+            $.each(themes, function (i,v) {
+                $("#sel-theme").append($("<option></option>").attr("value", v ).text(v));
+            })
+
+            $("#sel-theme").change(function () {
+                var val = $(this).val();
+
+                $("#ui-kind").attr('href',"https://code.jquery.com/ui/1.12.0/themes/"+val+"/jquery-ui.css");
+            });
+
         });
     </script>
 
     <style>
 
-        .yellow {
-            background: yellow
-        }
-
-        .dataintable {
-            border: 1px solid
-        }
-
-        .mouse {
-            cursor: col-resize;
-        }
     </style>
 </head>
 <body>
 <div class="container bs-docs-container">
 
     <h1 class="page-header">Jquery UI 練習</h1>
+
+    <select id="sel-theme">
+
+    </select>
 
     <div id="slider"></div>
 
