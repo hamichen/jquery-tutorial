@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>林代典的作業_t1</title>
-<script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>林代典的作業_t6</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -16,42 +16,27 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
             crossorigin="anonymous"></script>
-
     <script type="text/javascript">
-$(document).ready(
-        function(){
-            $("h1").click(
-                    function () {
-                        $(this).hide();
-                    }
-            );
-            $("#c1").click(
-                    function () {
-                        $("h1").show();
-                    }
-            );
-            $("#c2").click(
-                    function () {
-                        $(".a1").css("border","dashed");
-                        $(".a1").css("color","blue");
-                    }
-            );
-
-        }
-);
-</script>
-<style>
-    .a1 {color: red; border: double};
-</style>
+        $(document).ready(function () {
+            $("h1").click(function () {
+                $("pre").toggle('slow');
+            })
+        });
+    </script>
+    <style>
+        .yellow {background: yellow}
+        .mouse {cursor: url("http://image.flaticon.com/icons/png/128/149/149050.png"), auto}
+    </style>
 </head>
 <body>
 <div class="col-md-9">
-    <h1 class="a1">我是第一行</h1>
-    <h1 class="a1">我是第二行</h1>
-    <p><a id="c1" href="#">點我_顯示</a></p>
-    <p><a id="c2" href="#">點我_變化</a></p>
+    <h1 class="page-header">效果練習</h1>
+    <pre>
+        jQuery 事件处理方法是 jQuery 中的核心函数。
+
+        事件处理程序指的是当 HTML 中发生某些事件时所调用的方法。术语由事件“触发”（或“激发”）经常会被使用。
+    </pre>
     <span class="btn btn-default"><a href="index.html">back index</a></span>
 </div>
-
 </body>
 </html>
