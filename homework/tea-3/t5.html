@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>林代典的作業_t5</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#b1").click(function() {
+                $("input[type='checkbox']").each(function (i,val) {
+                    if ($(this).prop("checked"))
+                        console.log(i);
+                    else
+                        console.log(i+"not checked")
+                });
+            });
+            $("#b2").click(function() {
+                $("input[type='radio']").each(function (i,val) {
+                    if ($(this).prop("checked"))
+                        console.log(i);
+                    else
+                        console.log(i+"not checked")
+                });
+            });
+
+        });
+    </script>
+    <style>
+        .yellow {background: yellow}
+        .mouse {cursor: url("http://image.flaticon.com/icons/png/128/149/149050.png"), auto}
+    </style>
+</head>
+<body>
+<div class="col-md-9">
+    <h1 class="page-header">form 練習</h1>
+    <form method="post">
+        <div>
+            <input type="text" name="t1">
+        </div>
+        <div>
+            <input type="checkbox" name="c1"><label id="l1">Taipei</label>
+            <input type="checkbox" name="c2"><label id="l2">Taichung</label>
+            <input type="checkbox" name="c3"><label id="l3">Tainan</label>
+            <span class="btn btn-primary" id="b1"><i class="glyphicon glyphicon-cog"></i> 顯示</span>
+
+        </div>
+        <div>
+            <input type="radio" name="r1">boy
+            <input type="radio" name="r2">girl
+        </div>
+    </form>
+    <span class="btn btn-default"><a href="index.html">back index</a></span>
+</div>
+</body>
+</html>
