@@ -24,6 +24,7 @@
             $("#slider").slider();
             $( "#sortable" ).sortable();
             $( "#sortable" ).disableSelection();
+            $( "#menu" ).menu();
         });
     </script>
     <style>
@@ -34,6 +35,11 @@
 <body>
 <div class="col-md-9">
     <h1 class="page-header">jquery ui 練習</h1>
+    <div>
+        <select id="">
+
+        </select>
+    </div>
     <div id="slider"></div>
     <div>
         <ul id="sortable">
@@ -46,10 +52,41 @@
             <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
         </ul>
     </div>
+    <div>
+        <ul id="menu">
+            <li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+            <li><div>Books</div></li>
+            <li><div>Clothing</div></li>
+            <li><div>Electronics</div>
+                <ul>
+                    <li><div>Home Entertainment</div></li>
+                    <li><div>Car Hifi</div></li>
+                    <li><div>Utilities</div></li>
+                </ul>
+            </li>
+            <li><div>Movies</div></li>
+            <li><div>Music</div>
+                <ul>
+                    <li><div>Rock</div>
+                        <ul>
+                            <li><div>Alternative</div></li>
+                            <li><div>Classic</div></li>
+                        </ul>
+                    </li>
+                    <li><div>Jazz</div>
+                        <ul>
+                            <li><div>Freejazz</div></li>
+                            <li><div>Big Band</div></li>
+                            <li><div>Modern</div></li>
+                        </ul>
+                    </li>
+                    <li><div>Pop</div></li>
+                </ul>
+            </li>
+            <li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+        </ul>
+    </div>
     <span class="btn btn-default"><a href="index.html">back index</a></span>
 </div>
-<?php
-echo "test";
-?>
 </body>
 </html>
