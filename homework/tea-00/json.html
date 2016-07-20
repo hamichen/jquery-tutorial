@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+    <meta charset="UTF-8">
+    <title>陳瑩光的作業</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaZ1mr6eU7COmb8H53BB4VtUx-h1dpUIk&signed_in=true&language=zh-TW"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+
+            $("#b2").click(function () {
+
+                $.get("http://www.geologycloud.tw/data/zh-tw/liquefaction?area=%E8%87%BA%E5%8D%97&classify=%E9%AB%98%E6%BD%9B%E5%8B%A2&all=true",
+                        function (val) {
+                            console.log(val);
+                            $.each(val.features, function(i,v){
+                                $.each(v.geometry.coordinates ,function(ii,vv){
+                                    console.log(vv[0][0]+'==='+vv[0][1]);
+                                });
+                            })
+                        });
+            });
+
+
+
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    center: {lat: 22.91550971, lng:120.2961439 },
+                    mapTypeId: google.maps.MapTypeId.TERRAIN
+                });
+
+// Define the LatLng coordinates for the polygon's path.
+                var triangleCoords = [
+                    {lat: 22.91550971, lng:120.2961439 },
+                    {lat: 22.9146067, lng: 120.29614856},
+                    {lat: 22.91461101, lng: 120.29712337},
+                    {lat: 22.913708, lng:120.29712803 }
+                ];
+
+// Construct the polygon.
+                var bermudaTriangle = new google.maps.Polygon({
+                    paths: triangleCoords,
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: '#FF0000',
+                    fillOpacity: 0.35
+                });
+                bermudaTriangle.setMap(map);
+            }
+
+
+            initMap();
+        });
+    </script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 400px;
+            width: auto;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container bs-docs-container">
+
+    <h1 class="page-header">Gmap 練習</h1>
+    <span id="b2" class="btn btn-primary">Ajax Open Data</span>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="map"></div>
+        </div>
+    </div>
+
+
+</div>
+<script>
+    // This example creates a simple polygon representing the Bermuda Triangle.
+
+
+</script>
+
+
+</body>
+</html>
