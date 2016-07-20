@@ -2,21 +2,90 @@
 <html>
 <head>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
 <script type="text/javascript">
  $(document).ready(
 	function (){
-		$("h1").css("color","#00FF00");
-		
-		$("h1").fadeIn("slow");
-	}
- );
+        $("h1").click(
+                function () {
+                    $("pre").toggle('slow',function () {
+                        console.log('完成');
+                    });
+                });
+        $( "input" ).checkboxradio();
+        $( function() {
+            var progressbar = $( "#progressbar" ),
+                    progressLabel = $( ".progress-label" );
+            progressbar.progressbar({
+                value: false,
+                change: function() {
+                    progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+                },
+                complete: function() {
+                    progressLabel.text( "Complete!" );
+                }
+            });
+            function progress() {
+                var val = progressbar.progressbar( "value" ) || 0;
+                progressbar.progressbar( "value", val + 2 );
+                if ( val < 99 ) {
+                    setTimeout( progress, 80 );
+                }
+            }
+            setTimeout( progress, 2000 );
+        } );
+
+ });
+
 </script>
 </head>
 
 <body>
 <h1 style="color:blue">JQuery TEST 1</h1>
-
+<div id="progressbar"><div class="progress-label">Loading...</div></div>
+<h2>Radio Group</h2>
+<fieldset>
+    <legend>Select a Location: </legend>
+    <label for="radio-1">New York</label>
+    <input type="radio" name="radio-1" id="radio-1">
+    <label for="radio-2">Paris</label>
+    <input type="radio" name="radio-1" id="radio-2">
+    <label for="radio-3">London</label>
+    <input type="radio" name="radio-1" id="radio-3">
+</fieldset>
+<h2>Checkbox</h2>
+<fieldset>
+    <legend>Hotel Ratings: </legend>
+    <label for="checkbox-1">2 Star</label>
+    <input type="checkbox" name="checkbox-1" id="checkbox-1">
+    <label for="checkbox-2">3 Star</label>
+    <input type="checkbox" name="checkbox-2" id="checkbox-2">
+    <label for="checkbox-3">4 Star</label>
+    <input type="checkbox" name="checkbox-3" id="checkbox-3">
+    <label for="checkbox-4">5 Star</label>
+    <input type="checkbox" name="checkbox-4" id="checkbox-4">
+</fieldset>
+<h2>Checkbox nested in label</h2>
+<fieldset>
+    <legend>Bed Type: </legend>
+    <label for="checkbox-nested-1">2 Double
+        <input type="checkbox" name="checkbox-nested-1" id="checkbox-nested-1">
+    </label>
+    <label for="checkbox-nested-2">2 Queen
+        <input type="checkbox" name="checkbox-nested-2" id="checkbox-nested-2">
+    </label>
+    <label for="checkbox-nested-3">1 Queen
+        <input type="checkbox" name="checkbox-nested-3" id="checkbox-nested-3">
+    </label>
+    <label for="checkbox-nested-4">1 King
+        <input type="checkbox" name="checkbox-nested-4" id="checkbox-nested-4">
+    </label>
+</fieldset>
+<pre>
 <a href="index.html">BACK</a>
+</pre>
 </body>
 
 </html> 
