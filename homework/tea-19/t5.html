@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script type="text/javascript">
+ $(document).ready(function() {
+			$("input[name='t1']").change(
+					function(){
+						$(this).addClass("green");
+					}
+	 		);
+	 		$("input[name='t2']").onkeydown(
+	 				function(){
+	 					$(this).addClass("g1");
+					}
+			);
+		 }
+ );
+</script>
+<style>
+	.green {background-color: #00ccff}
+	.g1 {background-color: #6f5499}
+</style>
+</head>
+<body>
+<div class="container bs-docs-container">
+	<div class="bs-callout bs-callout-info">
+<input type="'text" name="t1">
+		<input type="'text" name="t2">
+
+<p><a href="index.html">BACK</a></p>
+	</div></div>
+</body>
+
+</html> 
