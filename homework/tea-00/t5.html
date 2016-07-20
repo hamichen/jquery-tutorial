@@ -5,45 +5,77 @@
     <title>陳瑩光的作業</title>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
 
     <script type="text/javascript">
 
         $(document).ready(function () {
 
-            $("#b1").click(function(){
+            $("#b1").click(function () {
                 //console.log($("input[name='c1']").val());
                 /*$("input[type='checkbox']").each(function(i,val){
-                    if (val.attr('checked'))
-                        console.log(i);
-                });
-*/
-                $.each($("input[type='checkbox']"), function(i,val){
-                    if ($(this).attr('checked'))
-                        console.log(i);
+                 if (val.attr('checked'))
+                 console.log(i);
+                 });
+                 */
+                $.each($("input[name='c2[]']:checked"), function (i, val) {
+
+                    if ($(this).is(":checked"))
+                        console.log($(this).val());
                     else
-                        console.log(i+'not checked');
+                        console.log(i + 'not checked');
                 });
 
             });
-            $("#b2").click(function(){
+
+            $("#checkAll").click(function () {
+                $.each($("input[name='c2[]']"), function (i, val) {
+                    if ($(this).is(":checked"))
+                        $(this).prop('checked', false);
+                    else
+                        $(this).prop('checked', true);
+                });
+            });
+
+            $("#btn1").click(function () {
+                var val = $("input[name='c4']:checked").val();
+                console.log(val);
+            });
+
+            $("#b2").click(function () {
                 $("input[name='c1']").val('changed');
+            });
+
+            $("#b3").click(function () {
+               var val = $("#sel option:selected").text();
+              console.log(val);
+              //  $("#sel").val(3);
             });
         });
     </script>
 
     <style>
 
-        .yellow {background: yellow}
-        .dataintable {border: 1px solid}
-        .mouse{
-           cursor:col-resize;
+        .yellow {
+            background: yellow
+        }
+
+        .dataintable {
+            border: 1px solid
+        }
+
+        .mouse {
+            cursor: col-resize;
         }
     </style>
 </head>
@@ -54,20 +86,32 @@
 
     <form method="post">
         <div>
-        <input type="text" name="c1">
+            <input type="text" name="c1">
         </div>
         <div>
-        <input type="checkbox" name="c2"><label>台北</label>
-        <input type="checkbox" name="c3">台中
-        <input type="checkbox" name="c4">台南
+            <input type="checkbox" name="c2[]" value="台北"><label>台北</label>
+            <input type="checkbox" name="c2[]" value="台中">台中
+            <input type="checkbox" name="c2[]" value="台南">台南
+            <span class="btn btn-xs btn-warning" id="checkAll">全選/反選</span>
         </div>
         <div>
-            <input type="radio" name="c4">男
-            <input type="radio" name="c4">女
+            <input type="radio" name="c4" value="男">男
+            <input type="radio" name="c4" value="女">女
+            <span class="btn btn-xs btn-warning" id="btn1">查看</span>
+        </div>
+        <div>
+            <select name="c5" id="sel">
+                <option value="1">國語</option>
+                <option value="2">數學</option>
+                <option value="3">英文</option>
+            </select>
+            <span class="btn btn-primary" id="b3"><i class="glyphicon glyphicon-cog"></i> 顯示</span>
+        </div>
+        <div>
+            <span class="btn btn-primary" id="b1"><i class="glyphicon glyphicon-cog"></i> 顯示</span>
+            <span class="btn btn-primary" id="b2"><i class="glyphicon glyphicon-cog"></i> 改變</span>
         </div>
 
-        <span class="btn btn-primary" id="b1"><i class="glyphicon glyphicon-cog"></i> 顯示</span>
-        <span class="btn btn-primary" id="b2"><i class="glyphicon glyphicon-cog"></i> 改變</span>
     </form>
 
 </div>
