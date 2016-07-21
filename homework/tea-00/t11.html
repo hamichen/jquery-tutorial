@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>陳瑩光的作業</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaZ1mr6eU7COmb8H53BB4VtUx-h1dpUIk"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var data;
+
+            $.get('data.json', function (res) {
+                data = res;
+                $.each(data, function (i,v) {
+                    var p = $("<p></p>").data('lat',v.showInfo[0].latitude).data('lng',v.showInfo[0].longitude);
+                    p.text(v.title);
+                    $("#message").append(p);
+                });
+            })
+
+            //initMap();
+            function initMap(lat, lng) {
+                var myLatLng = {lat: lat, lng: lng};
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    center: myLatLng
+                });
+
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Hello World!'
+                });
+
+            }
+
+            $("#message p").on('click',function () {
+                console.log('test');
+                var lat = $(this).data('lat');
+                var lng = $(this).data('lng');
+                initMap(lat, lng);
+            });
+
+        });
+    </script>
+
+    <style>
+        #map {
+            height: 400px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container bs-docs-container">
+
+    <div id="map"></div>
+
+    <div id="message"></div>
+
+    <div>
+        <span id="b1" class="btn btn-primary"> Load Ajax</span>
+        <span id="b2" class="btn btn-primary"> Get Ajax</span>
+    </div>
+</div>
+
+</body>
+</html>
