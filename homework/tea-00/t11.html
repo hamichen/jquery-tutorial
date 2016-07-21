@@ -30,13 +30,15 @@
                 data = res;
                 $.each(data, function (i,v) {
                     var p = $("<p></p>").data('lat',v.showInfo[0].latitude).data('lng',v.showInfo[0].longitude);
+                    p.data('title', v.title);
+                   // var p = $("<p></p>").data(v);
                     p.text(v.title);
                     $("#message").append(p);
                 });
             })
 
             //initMap();
-            function initMap(lat, lng) {
+            function initMap(lat, lng, title) {
                 var myLatLng = {lat: lat, lng: lng};
 
                 var map = new google.maps.Map(document.getElementById('map'), {
@@ -47,16 +49,17 @@
                 var marker = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
-                    title: 'Hello World!'
+                    title: title
                 });
 
             }
 
-            $("#message p").on('click',function () {
+            $("#message").on('click','p',function () {
                 console.log('test');
-                var lat = $(this).data('lat');
-                var lng = $(this).data('lng');
-                initMap(lat, lng);
+                var lat = parseFloat($(this).data('lat'));
+                var lng = parseFloat($(this).data('lng'));
+                var title = $(this).data('title');
+                initMap(lat, lng, title);
             });
 
         });
@@ -72,13 +75,14 @@
 <body>
 <div class="container bs-docs-container">
 
-    <div id="map"></div>
+    <h1 class="page-header">GMAP 應用</h1>
+    <div class="row">
+        <div class="col-md-3" style="overflow: scroll; height: 400px"><div id="message"></div></div>
+        <div class="col-md-9"><div id="map"></div></div>
+    </div>
 
-    <div id="message"></div>
-
-    <div>
+    <div class="row">
         <span id="b1" class="btn btn-primary"> Load Ajax</span>
-        <span id="b2" class="btn btn-primary"> Get Ajax</span>
     </div>
 </div>
 
