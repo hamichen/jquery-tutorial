@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>simu的html5 data陣列 </title>
+    <title>simu的作業</title>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -26,10 +26,9 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            $.each($(".page-header").data('abc'),function(i,v){
-                console.log(v);
+            $("#b1").click(function(){
+                $("#message").load('http://dns.mcps.chc.edu.tw/sfs3/modules/board/board_view.php');
             });
-
         });
     </script>
 
@@ -40,8 +39,11 @@
 <body>
 <div class="container bs-docs-container">
 
-    <h1 class="page-header" data-abc=[123,456,789]><B>Jquery UI 練習</B></h1>
+    <h1 id="message">AJAX 練習</h1>
 
+    <div>
+        <span id="b1" class="btn btn-primary">查看</span>
+    </div>
 
 </div>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>simu的html5 data陣列 </title>
+    <title>simu的作業</title>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -26,10 +26,8 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            $.each($(".page-header").data('abc'),function(i,v){
-                console.log(v);
-            });
-
+            var thing = $(".container bs-docs-container").parent();
+            console.log(thing);
         });
     </script>
 
@@ -40,9 +38,23 @@
 <body>
 <div class="container bs-docs-container">
 
-    <h1 class="page-header" data-abc=[123,456,789]><B>Jquery UI 練習</B></h1>
+    <h1 class="page-header">Jquery UI 練習</h1>
 
+    <select id="sel-theme">
 
+    </select>
+
+    <div id="slider"></div>
+
+    <ul id="sortable">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+    </ul>
 </div>
 
 </body>

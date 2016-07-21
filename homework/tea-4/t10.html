@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>simu的html5 data陣列 </title>
+    <title>simu的作業</title>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.dynatable.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -12,6 +13,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/jquery.dynatable.css">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
@@ -26,10 +28,26 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            $.each($(".page-header").data('abc'),function(i,v){
-                console.log(v);
+            $("#b1").click(function () {
+                $.get('data.json', function (res) {
+                    $.each(res, function (i, data) {
+                        var location = data.showInfo[0].location;
+                        if (data.masterUnit[0])
+                            var p = $("<p></p>").text(data.title + '--' + location + '(' + data.masterUnit[0] + ')');
+                        $("#message").append(p);
+                    })
+                })
             });
 
+            $("#b2").click(function () {
+                $.get('data.json', function (res) {
+                    $('#my-final-table').dynatable({
+                        dataset: {
+                            records: res
+                        }
+                    });
+                });
+            });
         });
     </script>
 
@@ -40,10 +58,24 @@
 <body>
 <div class="container bs-docs-container">
 
-    <h1 class="page-header" data-abc=[123,456,789]><B>Jquery UI 練習</B></h1>
+    <h1 id="message">AJAX 練習</h1>
 
+    <div>
+        <span id="b1" class="btn btn-primary"> Load Ajax</span>
+        <span id="b2" class="btn btn-primary"> Load Ajax 到table</span>
+    </div>
 
 </div>
+
+<!-- https://www.dynatable.com -->
+<table id="my-final-table">
+    <thead>
+    <th>title</th>
+    <th>descriptionFilterHtml</th>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 
 </body>
 </html>
