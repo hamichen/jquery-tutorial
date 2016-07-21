@@ -36,7 +36,7 @@
             });
 
             $("#sortable").sortable();
-         //   console.log($("#ui-kind"));
+            //   console.log($("#ui-kind"));
 
             var themes = ['base','black-tie' ,'blitzer', 'cupertino','dark-hive' ,'ui-darkness' ,'ui-lightness' ,'vader'];
 
@@ -50,11 +50,7 @@
                 $("#ui-kind").attr('href',"https://code.jquery.com/ui/1.12.0/themes/"+val+"/jquery-ui.css");
             });
 
-            $(".page-header").click(function () {
-                console.log($(this).text());
-                console.log($(this).html());
-                console.log($(this).val());
-            });
+
 
         });
     </script>
@@ -66,8 +62,8 @@
 <body>
 <div class="container bs-docs-container">
 
-    <h1 class="page-header" data-sex="男" value="[123,34,56]"><span>Jquery UI 練習</span></h1>
-
+    <h1 class="test1" data-sex="男" data-a="[12,34]">Jquery UI 練習</h1>
+    <h1 class="page-header" data-sex="男" data-a="[12,34]">Jquery UI 練習</h1>
 
     <select id="sel-theme">
 
