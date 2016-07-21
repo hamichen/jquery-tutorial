@@ -28,15 +28,15 @@
         $(document).ready(function () {
 
             $("#b1").click(function(){
-                $("#message").load('mydata.html');
-            });
-            $("#b2").click(function(){
-                $.get('data.json',function (res) {
+                $.get('data.json', function (res) {
                     $.each(res, function (i,data) {
-                        console.log(data.masterUnit);
+                        console.log(data.title);
+                        var p = $("<p></p>").text(data.title);
+                        $("#message").append(p);
                     })
-                });
+                })
             });
+
         });
     </script>
 
@@ -51,7 +51,6 @@
 
     <div>
         <span id="b1" class="btn btn-primary"> Load Ajax</span>
-        <span id="b2" class="btn btn-primary"> Get Ajax</span>
     </div>
 </div>
 
