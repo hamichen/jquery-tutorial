@@ -50,7 +50,11 @@
                 $("#ui-kind").attr('href',"https://code.jquery.com/ui/1.12.0/themes/"+val+"/jquery-ui.css");
             });
 
-
+            $(".page-header").click(function () {
+                console.log($(this).text());
+                console.log($(this).html());
+                console.log($(this).val());
+            });
 
         });
     </script>
@@ -62,7 +66,8 @@
 <body>
 <div class="container bs-docs-container">
 
-    <h1 class="page-header">Jquery UI 練習</h1>
+    <h1 class="page-header" data-sex="男" value="[123,34,56]"><span>Jquery UI 練習</span></h1>
+
 
     <select id="sel-theme">
 
